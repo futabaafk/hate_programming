@@ -38,21 +38,27 @@
 // Привет, Алекс! Тебе 25 лет. (имя и возраст бери из объекта, не пиши вручную).
 // После вызова функции (но вне .then) выведи в консоль Загружаю....
 
-const getUser = () =>{
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
-            resolve({ name: "Алекс", age: 25 })
-        })
+// const getUser = () =>{
+//     return new Promise((resolve, reject)=>{
+//         setTimeout(()=>{
+//             resolve({ name: "Алекс", age: 25 })
+//         })
+//     }, 2000)
+// }
+
+// getUser()
+//     .then((userdata)=>{
+//         console.log(`hello ${userdata.name}! you are ${userdata.age}`)
+//     })
+
+// console.log("downloading...")
+
+
+
+async function toDo(){
+    setTimeout(()=>{
+        console.log("wtf is going on")
     }, 2000)
 }
 
-getUser()
-    .then((userdata)=>{
-        console.log(`hello ${userdata.name}! you are ${userdata.age}`)
-    })
-
-console.log("downloading...")
-
-
-
-
+await toDo()
