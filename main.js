@@ -25,21 +25,44 @@
 // console.log("Orders have accepted")
 
 
+
+
+
+
+
+
+
+
+
 const button = document.getElementById("btn1")
 
 
-const click = () =>{
+// const click = () =>{
+//   return new Promise((resolve)=>{
+//     button.addEventListener('click', ()=>{
+//       resolve()
+//     })
+//   })
+// }
+
+// click().then(()=>{
+//   console.log("куда ты жмаешь далбаеб")
+// })
+
+// https://www.youtube.com/watch?v=BQGJJcCQBqU
+
+async function main(){
+const click = ()=>{
   return new Promise((resolve)=>{
     button.addEventListener('click', ()=>{
       resolve()
     })
   })
+} 
+
+const result = await click()
+console.log("кнопка")
 }
 
-click().then(()=>{
-  console.log("куда ты жмаешь далбаеб")
-})
-
-// https://www.youtube.com/watch?v=BQGJJcCQBqU
-
+main()
 
