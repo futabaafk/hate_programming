@@ -1,16 +1,34 @@
-const delay = (ms, number)=>{
-  return new Promise((resolve)=>{
-    setTimeout(()=>{
-      resolve(number)
-    }, ms)
-  })
+const button = document.getElementById("btn1")
+const usertext = document.getElementById('text')
+
+
+const getUserName = async() =>{
+
+const response = await fetch("https://jsonplaceholder.typicode.com/users")
+ try{
+   if(!response.ok){
+    throw new Error(response.status)
+   }
+ }
+ catch(error){
+  // console.log(error.message)
+  usertext.innerText = error.message
+
+ }
+
+ const user = await response.json()
+ 
+ const res = user.forEach((element, index, array)=>{
+     element.name
+ })
+
+ usertext.innerText = res
+
+
+  
 }
-
-
-delay(1000,5).then((num)=>{
-   return num*50
-}).then((num)=>{
-  return delay(2000, num)
-}).then((result)=>{
-  console.log(result)
+button.addEventListener('click', ()=>{
+  getUserName()
 })
+
+
